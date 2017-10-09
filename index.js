@@ -15,19 +15,19 @@ var server = http.createServer(function(request, response){
   //从这里开始看，上面不要看
   if(method === 'GET'){
     if(path === '/'){  // 如果用户请求的是 / 路径
-      var string = fs.readFileSync('./drawing-board.html')
+      var string = fs.readFileSync('./drawing-board.html','utf8')
       response.setHeader('Content-Type', 'text/html;charset=utf-8')
       response.end(string)
     }else if(path === '/drawing-board.css'){
-      var string = fs.readFileSync('./drawing-board.css')
+      var string = fs.readFileSync('./drawing-board.css','utf8')
       response.setHeader('Content-Type', 'text/css')
       response.end(string)
     }else if(path === '/drawing-board.js'){
-      var string = fs.readFileSync('./drawing-board.js')
+      var string = fs.readFileSync('./drawing-board.js','utf8')
       response.setHeader('Content-Type', 'application/javascript')
       response.end(string)
     }else if(path === '/jquery-3.2.1.min.js'){
-      var string = fs.readFileSync('./jquery-3.2.1.min.js')
+      var string = fs.readFileSync('./jquery-3.2.1.min.js','utf8')
       response.setHeader('Content-Type', 'application/javascript')
       response.end(string)
     }else{
